@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Login</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link href="{{ url_for('static',filename='index.css') }}" rel="stylesheet" id="bootstrap-css">
+<script src="{{ url_for('static',filename='login.js') }}"></script>
+</head>
+
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <img src="https://raw.githubusercontent.com/AshishRajIITI/Misc-6-Infinity-Remote/b055dc1ef1bed93cb58ccff57b941da2b562b939/Infinity%20Remote/Backend/icons/icon.svg" id="icon" alt="User Icon" />
+    </div>
+    <div class="invalid">
+      {{message}}
+    </div>
+    <!-- Login Form -->
+    <form action="/login" method="POST">
+      <input type="text" class="fadeIn second login" name="userid" placeholder="User ID">
+      <input type="password" class="fadeIn third login" name="password" placeholder="Password">
+      <i class="far fa-eye" onclick="togglePassword()"></i>
+      <input type="submit" class="fadeIn fourth" value="Login">
+      <div>
+        Not SignedUp? <a href="/">SignUp</a>
+      </div>
+    </form>
+
+  </div>  
+</div>
+</body>
+</html>

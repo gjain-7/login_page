@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        h1,h2{
+            text-align:center;
+            padding-top: 25px;
+            padding-bottom:15px;
+        }
+        h1{
+            color: #1973a0;
+        }
+        img{
+            float: right;
+            width: 200px;
+            margin-right: 15px;
+            margin-top: 5px;;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Indian_Institute_of_Technology%2C_Indore_Logo.png">
+    <h1>Welcome to IIT Indore</h1>
+    <h2>List of courses for BTech, CSE@IITI Student</h2>   
+    </div> 
+    <br><br>
+    <table class="table container">
+        <thead>
+            <tr>
+                {% for header in headings %}
+                <th scope="col">
+                    {{header}}
+                </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                {% for cell in row %}
+                    <td> {{cell}} </td>
+                {% endfor %}
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

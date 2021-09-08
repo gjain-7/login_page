@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Sign Up</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{{ url_for('static',filename='index.css') }}" rel="stylesheet" id="bootstrap-css">
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://raw.githubusercontent.com/AshishRajIITI/Misc-6-Infinity-Remote/b055dc1ef1bed93cb58ccff57b941da2b562b939/Infinity%20Remote/Backend/icons/icon.svg" id="icon" alt="User Icon" />
+    </div>
+    <div class="invalid">
+      {% if message %}
+        {{message}} <a href="/login">Login</a>  
+      {% endif %}
+    </div>
+    <!-- Login Form -->
+    <form action="/" method="POST">
+      <input type="text" class="fadeIn second login" name="userid" placeholder="User ID">
+      <input type="tel" pattern="^[0-9]{10}$"" title="Mobile number is 10-digits" class ="fadeIn second login" name="mobile_no" placeholder="Mobile Number">
+      <input type="password" class="fadeIn third login" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+      <div>
+        Already SignedUp? <a href="/login">Login</a>
+      </div>
+    </form>
+    <!-- Remind Passowrd
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div> -->
+
+  </div>
+</div>
+</body>
+</html>
